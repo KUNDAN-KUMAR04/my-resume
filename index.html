@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundan Kumar | Profile</title>
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --btn-bg: #334155;
+      --btn-hover: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .profile-card {
+      background-color: var(--card-bg);
+      border-radius: 20px;
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    /* Action / Resume Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--btn-bg);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Social Links Section */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-item {
+      background-color: var(--btn-bg);
+      color: var(--text-main);
+      padding: 14px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .link-item:hover {
+      background-color: var(--btn-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .link-left i {
+      font-size: 1.2rem;
+      width: 20px;
+      color: var(--accent);
+    }
+
+    .link-item i.fa-arrow-up-right-from-square {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <!-- Profile Photo -->
+    <img src="profile.jpg" alt="Profile Picture" class="avatar" />
+
+    <!-- Name & Short Headline -->
+    <h1 class="name">Kundan Kumar</h1>
+    <p class="bio">CSE (Cyber Security) | DevSecOps & Security Enthusiast</p>
+
+    <!-- Resume / CV Action Buttons -->
+    <div class="action-buttons">
+      <!-- Opens PDF in browser -->
+      <a href="resume.pdf" target="_blank" class="btn btn-primary">
+        <i class="fa-regular fa-file-lines"></i> View Resume
+      </a>
+      <!-- Forces download of the PDF -->
+      <a href="resume.pdf" download="Kundan_Kumar_Resume.pdf" class="btn btn-secondary">
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+
+    <!-- Social / Platform Links -->
+    <div class="links-list">
+      <a href="https://github.com/your-username" target="_blank" class="link-item">
+        <div class="link-left">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="https://linkedin.com/in/your-profile" target="_blank" class="link-item">
+        <div class="link-left">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="https://tryhackme.com/p/your-profile" target="_blank" class="link-item">
+        <div class="link-left">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>TryHackMe</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="mailto:your-email@example.com" class="link-item">
+        <div class="link-left">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Email Me</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
