@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kundan Kumar | Profile</title>
+  <title>Kundan Kumar | Connect & Profile</title>
   
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
+      --bg-color: #0b1329;
+      --card-bg: #151f38;
+      --section-bg: #1a2744;
       --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --btn-bg: #334155;
-      --btn-hover: #475569;
+      --btn-bg: #1e293b;
+      --btn-hover: #2b3954;
+      --success: #10b981;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
@@ -33,57 +36,85 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 24px;
+      padding: 30px 16px;
     }
 
     .profile-card {
       background-color: var(--card-bg);
-      border-radius: 20px;
-      padding: 36px 28px;
+      border-radius: 24px;
+      padding: 36px 24px;
       width: 100%;
-      max-width: 440px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      max-width: 480px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .avatar {
+    /* Header Profile */
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .avatar-wrapper {
       width: 110px;
       height: 110px;
+      margin: 0 auto 16px;
       border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 18px;
       border: 3px solid var(--accent);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 20px var(--accent-glow);
+      overflow: hidden;
+      background-color: #0f172a;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .name {
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      letter-spacing: -0.02em;
     }
 
     .bio {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
-      line-height: 1.4;
+      margin-top: 4px;
     }
 
-    /* Resume Action Buttons */
+    /* Location Pill */
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* Resume Row */
     .action-buttons {
       display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin: 20px 0 26px;
     }
 
     .btn {
       flex: 1;
-      padding: 12px 16px;
-      border-radius: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -93,11 +124,11 @@
 
     .btn-primary {
       background-color: var(--accent);
-      color: #0f172a;
+      color: #0b1329;
     }
 
     .btn-primary:hover {
-      opacity: 0.9;
+      opacity: 0.92;
       transform: translateY(-1px);
     }
 
@@ -112,26 +143,46 @@
       transform: translateY(-1px);
     }
 
-    /* Links Section */
+    /* Group Sections */
+    .section-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 20px 0 10px 4px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .links-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .link-item {
       background-color: var(--btn-bg);
       color: var(--text-main);
-      padding: 14px 18px;
+      padding: 13px 16px;
       border-radius: 12px;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: 0.92rem;
       font-weight: 500;
-      font-size: 0.95rem;
       transition: all 0.2s ease;
       border: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer;
     }
 
     .link-item:hover {
@@ -143,32 +194,85 @@
     .link-left {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      overflow: hidden;
     }
 
     .link-left i {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       width: 20px;
       color: var(--accent);
+      text-align: center;
     }
 
-    .link-item i.fa-arrow-up-right-from-square {
+    .link-label-group {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .label-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .label-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .link-right-icon {
       font-size: 0.8rem;
       color: var(--text-muted);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background-color: var(--success);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
   <div class="profile-card">
-    <!-- Profile Photo -->
-    <img src="profile.jpg" alt="Profile Picture" class="avatar" />
+    
+    <!-- Profile Header -->
+    <div class="header">
+      <div class="avatar-wrapper">
+        <img src="profile.jpg" alt="Kundan Kumar" class="avatar" />
+      </div>
+      <h1 class="name">Kundan Kumar</h1>
+      <p class="bio">CSE (Cyber Security) • DevSecOps • Security Enthusiast</p>
+      
+      <!-- Unified Location -->
+      <div class="location-badge">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Hyderabad, Telangana, India</span>
+      </div>
+    </div>
 
-    <!-- Name & Bio -->
-    <h1 class="name">Kundan Kumar</h1>
-    <p class="bio">CSE (Cyber Security) | DevSecOps & Security Enthusiast</p>
-
-    <!-- Resume / CV Action Buttons -->
+    <!-- Resume Action Buttons -->
     <div class="action-buttons">
       <a href="resume.pdf" target="_blank" class="btn btn-primary">
         <i class="fa-regular fa-file-lines"></i> View Resume
@@ -178,54 +282,144 @@
       </a>
     </div>
 
-    <!-- Links List -->
+    <!-- Group 1: Hub & Web Presence -->
+    <div class="section-title">Portals & Hubs</div>
     <div class="links-list">
-      <!-- Kundan Linktree Button -->
       <a href="https://kundan-kumar04.github.io/kundan_linktree/" target="_blank" class="link-item">
         <div class="link-left">
           <i class="fa-solid fa-diagram-project"></i>
-          <span>All Links & Hub (Linktree)</span>
+          <div class="link-label-group">
+            <span class="label-title">Main Linktree</span>
+            <span class="label-sub">kundan-kumar04.github.io/kundan_linktree</span>
+          </div>
         </div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <i class="fa-solid fa-arrow-up-right-from-square link-right-icon"></i>
+      </a>
+    </div>
+
+    <!-- Group 2: Professional & Tech Profiles -->
+    <div class="section-title">Professional & Coding Profiles</div>
+    <div class="links-list">
+      <!-- LinkedIn (Primary) -->
+      <a href="https://linkedin.com/in/your-primary-id" target="_blank" class="link-item">
+        <div class="link-left">
+          <i class="fa-brands fa-linkedin"></i>
+          <div class="link-label-group">
+            <span class="label-title">LinkedIn (Primary / Tech)</span>
+            <span class="label-sub">in/kundan-kumar-primary</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square link-right-icon"></i>
       </a>
 
-      <!-- GitHub Profile -->
+      <!-- LinkedIn (Secondary / Alternate) -->
+      <a href="https://linkedin.com/in/your-secondary-id" target="_blank" class="link-item">
+        <div class="link-left">
+          <i class="fa-brands fa-linkedin"></i>
+          <div class="link-label-group">
+            <span class="label-title">LinkedIn (Alternate / Research)</span>
+            <span class="label-sub">in/kundan-kumar-alt</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square link-right-icon"></i>
+      </a>
+
+      <!-- GitHub -->
       <a href="https://github.com/kundan-kumar04" target="_blank" class="link-item">
         <div class="link-left">
           <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
+          <div class="link-label-group">
+            <span class="label-title">GitHub Profile</span>
+            <span class="label-sub">github.com/kundan-kumar04</span>
+          </div>
         </div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <i class="fa-solid fa-arrow-up-right-from-square link-right-icon"></i>
       </a>
 
-      <!-- LinkedIn Profile -->
-      <a href="https://linkedin.com/in/kundan-kumar04" target="_blank" class="link-item">
-        <div class="link-left">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </a>
-
-      <!-- TryHackMe Profile -->
+      <!-- TryHackMe -->
       <a href="https://tryhackme.com/p/KUN2001" target="_blank" class="link-item">
         <div class="link-left">
           <i class="fa-solid fa-shield-halved"></i>
-          <span>TryHackMe</span>
+          <div class="link-label-group">
+            <span class="label-title">TryHackMe Profile</span>
+            <span class="label-sub">Badges & Cybersecurity Labs</span>
+          </div>
         </div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </a>
-
-      <!-- Contact / Email -->
-      <a href="mailto:shivkundank0@gmail.com" class="link-item">
-        <div class="link-left">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Get in Touch (Email)</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <i class="fa-solid fa-arrow-up-right-from-square link-right-icon"></i>
       </a>
     </div>
+
+    <!-- Group 3: Direct Contacts (Emails & Numbers) -->
+    <div class="section-title">Direct Contact Channels</div>
+    <div class="links-list">
+      
+      <!-- Primary Email -->
+      <div class="link-item" onclick="copyText('primary.email@example.com', 'Primary Email copied!')">
+        <div class="link-left">
+          <i class="fa-regular fa-envelope"></i>
+          <div class="link-label-group">
+            <span class="label-title">Primary Email (Official)</span>
+            <span class="label-sub">primary.email@example.com</span>
+          </div>
+        </div>
+        <i class="fa-regular fa-copy link-right-icon" title="Click to copy"></i>
+      </div>
+
+      <!-- Secondary Email -->
+      <div class="link-item" onclick="copyText('personal.email@example.com', 'Secondary Email copied!')">
+        <div class="link-left">
+          <i class="fa-regular fa-envelope"></i>
+          <div class="link-label-group">
+            <span class="label-title">Secondary Email (Personal)</span>
+            <span class="label-sub">personal.email@example.com</span>
+          </div>
+        </div>
+        <i class="fa-regular fa-copy link-right-icon" title="Click to copy"></i>
+      </div>
+
+      <!-- Primary Phone -->
+      <a href="tel:+917382048432" class="link-item">
+        <div class="link-left">
+          <i class="fa-solid fa-phone"></i>
+          <div class="link-label-group">
+            <span class="label-title">Phone / WhatsApp (Primary)</span>
+            <span class="label-sub">+91 7382048432</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-phone-flip link-right-icon"></i>
+      </a>
+
+      <!-- Secondary Phone -->
+      <a href="tel:+918688055420" class="link-item">
+        <div class="link-left">
+          <i class="fa-solid fa-phone"></i>
+          <div class="link-label-group">
+            <span class="label-title">Alternate Number</span>
+            <span class="label-sub">+91 8688055420</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-phone-flip link-right-icon"></i>
+      </a>
+
+    </div>
   </div>
+
+  <!-- Toast Element -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-check"></i> <span id="toast-msg">Copied!</span>
+  </div>
+
+  <script>
+    function copyText(text, message) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        const msg = document.getElementById('toast-msg');
+        msg.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2200);
+      });
+    }
+  </script>
 
 </body>
 </html>
